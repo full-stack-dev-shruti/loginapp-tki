@@ -1,0 +1,18 @@
+{% extends 'mysite/base.html' %}
+{% load static %}
+
+{% block cssfiles %}
+    <link rel="stylesheet" href="{% static 'mysite/css/profile.css' %}">
+{% endblock %}
+
+{% block body %}
+    <ul>
+        <li ><a href="{% url 'logout' %}">Logout</a></li>
+        <li><a href="https://www.linkedin.com/in/-shruti-jain/" target="_blank">LinkedIn</a></li>
+    </ul>
+    <Br>
+    <h1>Shruti Jain</h1>
+    <a href="https://drive.google.com/file/d/1i1Zrg45bg_AbzrjYCNL7T5XwgezE4EgL/view?usp=sharing" target="_blank" class="pdf-link">
+        <span>Click here to view</span>
+    </a>
+{% endblock %}

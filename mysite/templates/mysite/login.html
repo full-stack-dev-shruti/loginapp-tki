@@ -1,0 +1,23 @@
+{% extends 'mysite/base.html' %}
+{% load static %}
+
+{% block cssfiles %}
+    <link rel="stylesheet" href="{% static 'mysite/css/login.css' %}">
+{% endblock %}
+{% block body %}
+    <h1>Login page</h1>
+    <section id ="login">
+        <form action="" method="POST">
+            {% csrf_token %}
+            <ol>
+                {{login_form.as_ul}}
+            </ol>
+            {% if not is_valid %}
+                <span id="invalid-email-pwd">User not found, Please check your email and password</span>
+            {% endif %}
+            <div id="login-actions">
+                <button type="submit" > LOGIN </button>
+            </div>
+        </form>
+    </section>
+{% endblock %}
